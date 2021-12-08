@@ -1,0 +1,33 @@
+<%- include('../partials/header'); -%>
+
+    <main>
+        <div class="upload-zone">
+            <div class="drop-zone">
+                <div class="file-image-container">
+                    <img src="./img/document_pictogram.svg" alt="" srcset="" class="left " draggable="false">
+                    <img src="./img/document_pictogram.svg" alt="" srcset="" class="center " draggable="false">
+                    <img src="./img/document_pictogram.svg" alt="" srcset="" class="right " draggable="false">
+
+                </div>
+                <input type="file" id="file-input" style="display: none;">
+                <h3>Drag a file here or <button class="browse-button">browse</button></h3>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <h3>Uploading..</h3>
+                    <h2>0</h2>
+                    <div class="progress-line"></div>
+                </div>
+            </div>
+            <% if (filepath !='' ) { %>
+                <div class="show-file-div">
+                    <button>
+                    </button>
+                </div>
+                <% } %>
+        </div>
+        <div class="upload-image-section">
+            <img src="img/undraw_going_up_ttm5.svg" alt="" draggable="false">
+        </div>
+    </main>
+    <%- include('../partials/footer'); -%>

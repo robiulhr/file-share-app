@@ -1,0 +1,149 @@
+:root{
+    --main-bg:#b6d4e7;
+    --upload-zone-bg:#78aac8;
+    --drop-zone-border:#a8dadc;
+    --browse-btn-color:#f1faee;
+    --progress-bar-bg:#6cbbed5c;
+    --progress-bar-line:#1586e2;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height:  100vh;
+    background-color:var(--main-bg);
+}
+
+.upload-zone{
+   background-color: var(--upload-zone-bg);
+   border-radius: 20px;
+}
+.drop-zone{
+ height: 300px;
+ width: 500px;
+ margin: 30px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ border-radius: 20px;
+ border: 2px dashed var(--drop-zone-border);
+}
+.file-image-container{
+margin-bottom: 20px;
+}
+.file-image-container img{
+    position: relative;
+    width: 80px;
+    transform-origin: bottom;
+    transition: transform .3s ease-in-out;
+}
+.left{
+    left: 80px;
+}
+.right{
+    right: 80px;
+}
+
+.draged .left{
+    transform: rotate(-10deg) translate(-40px,-10px) scale(.9);
+}
+.draged .center{
+    transform: translateY(-15px);
+}
+.draged .right{
+    transform: rotate(10deg) translate(40px, -10px) scale(.9);
+
+}
+.browse-button{
+    color: var(--browse-btn-color);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    text-decoration: underline;
+    margin-left: 3px;
+}
+
+/* //------------ progress bar */
+.progress-bar-container{
+ height: 100px;
+ border: 2px dashed var(--drop-zone-border);
+ margin: 30px;
+ border-radius: 20px;
+display: none;
+transition: .4s all ease-in-out;
+}
+.progress-bar{
+position: relative;
+background-color: var(--progress-bar-bg);
+height: 100%;
+border-radius: 20px;
+width: 0%;
+display: flex;
+align-items: center;
+transition: .4s all ease-in-out;
+justify-content: center;
+flex-direction: column;
+}
+.progress-bar h3{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    display: none;
+}
+.progress-bar h2{
+    position: absolute !important;
+    top: 10px;
+    right: 60px;
+    display: none;
+}
+.progress-line {
+    background-color: var(--progress-bar-line);
+    height: 20%;
+    border-radius: 20px;
+    width: 90%;
+    box-shadow: inset 1px 1px 0px 1px #2a28287a;
+}
+
+
+/* //--------------------- */
+.upload-image-section{
+
+}
+.upload-image-section img{
+height: 25rem;
+}
+
+/* -------------------------------- */
+.uploaded-file-div{
+    height: 100vh;
+    width: 100vw;
+
+}
+.uploaded-file-div img{
+    width: 100%;
+    height: 100%;
+}
+/* ---------------------------------- */
+.page-not-found{
+    overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #006BB3;
+}
+.page-not-found  img{
+    height: 100%;
+}
