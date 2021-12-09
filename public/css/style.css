@@ -1,10 +1,10 @@
 :root{
     --main-bg:#b6d4e7;
     --upload-zone-bg:#78aac8;
-    --drop-zone-border:#a8dadc;
     --browse-btn-color:#f1faee;
     --progress-bar-bg:#6cbbed5c;
     --progress-bar-line:#1586e2;
+    --border:2px dashed #a8dadc;
 }
 
 *{
@@ -13,7 +13,9 @@
     box-sizing: border-box;
 }
 
-body,html{}
+body,html{
+    background-color: var(--main-bg);
+}
 
 main{
     display: flex;
@@ -36,7 +38,7 @@ main{
  justify-content: center;
  flex-direction: column;
  border-radius: 20px;
- border: 2px dashed var(--drop-zone-border);
+ border: var(--border);
 }
 .file-image-container{
 margin-bottom: 20px;
@@ -77,7 +79,7 @@ margin-bottom: 20px;
 /* //------------ progress bar */
 .progress-bar-container{
  height: 100px;
- border: 2px dashed var(--drop-zone-border);
+ border:var(--border);
  margin: 30px;
  border-radius: 20px;
 display: none;
@@ -121,7 +123,7 @@ flex-direction: column;
 
 }
 .upload-image-section img{
-height: 25rem;
+width: 35vw;
 }
 
 /* -------------------------------- */
@@ -146,4 +148,131 @@ height: 25rem;
 }
 .page-not-found  img{
     height: 100%;
+}
+/* ---------------------------------- */
+.fileEndpoint-container{
+   width: 100%;
+   height: 70px;
+   padding: 5px 30px ;
+   padding-bottom: 15px;
+   display: none;
+    transition: .4s all ease-in-out;
+}
+.fileEndpoint-div{
+   border: var(--border);
+   position: relative;
+   height: 100%;
+   border-radius: 15px;
+   padding: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.fileEndpoint-div input{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+}
+.copy-button{
+position: absolute;
+right: 15px;
+background-color: transparent;
+border: none;
+outline: none;
+}
+.copy-button i{
+    font-size: 22px;
+    color: var(--upload-zone-bg);
+}
+/* -------------------------- download route ------------ */
+.download-wrapper{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.download-file-container{
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-file-container .download-div  {
+box-shadow: 1px 1px 86px -30px black;
+    width: 80%;
+background-image: url("/img/download.svg");
+ min-height: 65vh;
+ background-position: top;
+ background-size: contain;
+ background-repeat: no-repeat;
+ display: flex;
+ align-items: center;
+ justify-content: end;
+ flex-direction: column; 
+}
+
+.download-file-container .download-div h2{
+color: rgb(51, 51, 51);
+position: relative;
+top: -50px;
+font-size: 30px;
+}
+
+.download-file-container .download-div button {
+    position: relative;
+    top: -20px;
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #9dcbe7;
+    background-color: #89bcdb;
+    color: #e5eef3;
+
+}
+.download-image-container {
+    padding: 30px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.download-image-container .download-image {
+    width: 70%;
+
+}
+.download-image-container .download-image img{
+    width: 100%;
+}
+/* ------------------------ */
+@media only screen and (max-width: 1000px) {
+   main {
+       flex-direction: column;
+       flex-flow: column-reverse;
+        margin: 50px 0;
+   }
+   .upload-image-section img {
+       width: 50vw;
+   }
+     .download-wrapper {
+         flex-direction: column;
+         flex-flow: column-reverse;
+
+     }
+   .download-file-container {
+       width: 100%;
+      
+   }
+ 
+   .download-image-container {
+       width: 100%;
+
+   }
 }

@@ -8,6 +8,10 @@ let progressbarcontainer = document.querySelector('.progress-bar-container')
 let progressBar = document.querySelector('.progress-bar')
 let uploadingText = document.querySelector('.progress-bar h3')
 let uploadPercent = document.querySelector('.progress-bar h2')
+let fileEndpointContainer = document.querySelector('.fileEndpoint-container')
+let fileEndpointdivinput = document.querySelector('.fileEndpoint-div input')
+let copyButton = document.querySelector('.copy-button')
+//---------------
 dropZone.addEventListener('dragover', (e) => {
     e.preventDefault()
     fileImagecontainer.classList.add('draged')
@@ -46,6 +50,19 @@ fileInput.addEventListener('change', (e) => {
     }
 
 })
+copyButton.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    /* Select the text field */
+    fileEndpointdivinput.select();
+    fileEndpointdivinput.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(fileEndpointdivinput.value);
+
+    /* Alert the copied text */
+    alert("Copied the text: " + fileEndpointdivinput.value);
+})
 //--------------uploading file and showing Progress
 function uploadfileandProgress(file) {
     const formData = new FormData();
@@ -68,7 +85,13 @@ function uploadfileandProgress(file) {
             uploadingText.textContent = 'Upload Done'
         }
     };
-
+    request.onreadystatechange = function () {
+        if (request.readyState == XMLHttpRequest.DONE) {
+            fileEndpointContainer.style.display = 'block'
+            let fileEndpoint = JSON.parse(request.responseText).fileEndpoint
+            fileEndpointdivinput.value = fileEndpoint
+        }
+    }
     request.onerror = function (e) {
         console.log('Error');
         console.log(e);

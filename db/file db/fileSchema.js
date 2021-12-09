@@ -9,7 +9,10 @@ const fileSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    date: { type: Date, default: Date.now }
+    date: { type: Date, default: Date.now },
+    uuid: {
+        type: String, required: true
+    }
 });
 
 const file = mongoose.model("file", fileSchema);

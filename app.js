@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 3000
 //----------- serve static file
 app.use('/', express.static('public'))
 app.use('/uploadfile', express.static('public'))
-app.use('/uploadfile', express.static('uploadfile'))
+app.use('/uploadfile', express.static('uploadFiles'))
+
 
 
 //---------- ejs tamplate engine setup
@@ -38,6 +39,6 @@ app.all('*', (req, res) => {
 
 //---------- listening the port
 app.listen(PORT, () => {
-    console.log(`app listening at http://localhost:${PORT}`)
+    console.log(`app listening at ${PORT}`)
 })
 

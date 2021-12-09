@@ -19,15 +19,15 @@
                     <div class="progress-line"></div>
                 </div>
             </div>
-            <% if (filepath !='' ) { %>
-                <div class="show-file-div">
-                    <button>
-                    </button>
+            <div class="fileEndpoint-container">
+                <div class="fileEndpoint-div">
+                    <input type="text" readonly>
+                    <button class="copy-button"><i class="fas fa-copy"></i></button>
                 </div>
-                <% } %>
+            </div>
         </div>
         <div class="upload-image-section">
-            <img src="img/undraw_going_up_ttm5.svg" alt="" draggable="false">
+            <img src="img/upload.svg" alt="" draggable="false">
         </div>
     </main>
     <%- include('../partials/footer'); -%>
