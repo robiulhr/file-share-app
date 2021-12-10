@@ -15,5 +15,4 @@ DbConnect = async (DB_URL) => {
     }
 }
 
-
 module.exports = DbConnect

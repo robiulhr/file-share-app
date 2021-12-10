@@ -1,6 +1,7 @@
 
 const express = require('express')
 const app = express()
+require('dotenv').config()
 
 
 const PORT = process.env.PORT || 3000
@@ -17,7 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // ------------ database setup
-const DB_URL = process.env.DB_URL || 'mongodb://localhost:27017/file_sharing_app'
+
+const DB_URL = process.env.DB_URL
 const mongoose = require("mongoose");
 const DbConnect = require('./db/file db/Db')
 DbConnect(DB_URL)
