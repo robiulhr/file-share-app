@@ -18,8 +18,17 @@ module.exports = {
                 await fileData.save(function (err, data) {
                     if (err) throw err;
                 });
+                // ------------ protocol fixing
+                if (req.header('protocol')) {
+                    console.log('it contain')
+
+                } else {
+                    console.log('not contain')
+                }
+                //-------------------------------
                 res.json({
                     fileEndpoint: `${req.header('protocol') ? req.header('protocol') : ''}${req.header('Host')}/uploadfile/${uuid}`
+                    // fileEndpoint: `${req.header('protocol')}`
                 })
             }
         } catch (error) {
