@@ -10,7 +10,6 @@ app.use('/uploadfile', express.static('public'))
 app.use('/uploadfile', express.static('uploadFiles'))
 
 
-
 //---------- ejs tamplate engine setup
 app.set('view engine', 'ejs')
 // -------------form data access
@@ -27,11 +26,13 @@ const loginRoutes = require('./routes/login')
 const registerRoutes = require('./routes/register')
 const homeRoutes = require('./routes/home')
 const uploadsFileRoutes = require('./routes/uploadFile')
+const sentEmail = require('./routes/sentEmail')
 //-----------
 app.use('/login', loginRoutes)
 app.use('/register', registerRoutes)
 app.use('/', homeRoutes)
 app.use('/uploadfile', uploadsFileRoutes)
+app.use('/sentemail', sentEmail)
 // page not found
 app.all('*', (req, res) => {
     res.status(404).render('pages/pagenotfound')

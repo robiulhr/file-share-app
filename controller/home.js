@@ -16,7 +16,6 @@ module.exports = {
             });
             fileData.save(function (err, data) {
                 if (err) throw err;
-                console.log(data)
             });
             res.json({
                 fileEndpoint: `${req.header('protocol') ? req.header('protocol') : ''}${req.header('Host')}/uploadfile/${uuid}`

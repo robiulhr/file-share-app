@@ -5,6 +5,7 @@
     --progress-bar-bg:#6cbbed5c;
     --progress-bar-line:#1586e2;
     --border:2px dashed #a8dadc;
+    --alert-popup-color: #53b9e2;
 }
 
 *{
@@ -16,11 +17,14 @@
 body,html{
     background-color: var(--main-bg);
 }
-
+body{
+    overflow-x: hidden;
+}
 main{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    width: 100vw;
     min-height:  100vh;
     background-color:var(--main-bg);
 }
@@ -28,6 +32,7 @@ main{
 .upload-zone{
    background-color: var(--upload-zone-bg);
    border-radius: 20px;
+   padding-bottom: 20px;
 }
 .drop-zone{
  height: 300px;
@@ -136,6 +141,60 @@ width: 35vw;
     width: 100%;
     height: 100%;
 }
+/* -------------------------------------- */
+.email-div-container{
+padding: 0 30px;
+margin-top: 20px;
+/* display: none; */
+}
+.email-div-container .email-div{
+padding: 10px 0;
+border: var(--border);
+border-radius: 20px;
+}
+.email-div-container .email-div form{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.email-div-container .email-div .from-email-div,
+.email-div-container .email-div .to-email-div {
+width: 80%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+margin: 10px;
+}
+.email-div-container .email-div .from-email-div label,
+.email-div-container .email-div .to-email-div label{
+font-size: 18px;
+color: white;
+
+}
+.email-div-container .email-div .from-email-div input,
+.email-div-container .email-div .to-email-div input{
+padding: 5px 10px;
+border: none;
+outline: none;
+border-radius: 10px;
+}
+.email-div-container .email-div .to-email-div input{
+    margin-left: 20px;
+}
+.email-div-container .email-div .email-submit{
+margin: 10px;
+}
+.email-div-container .email-div .email-submit input{
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    background-color: var(--main-bg);
+    margin-left: 140px;
+
+}
 /* ---------------------------------- */
 .page-not-found{
     overflow: hidden;
@@ -208,7 +267,7 @@ outline: none;
 box-shadow: 1px 1px 86px -30px black;
     width: 80%;
 background-image: url("/img/download.svg");
- min-height: 65vh;
+ min-height: 600px;
  background-position: top;
  background-size: contain;
  background-repeat: no-repeat;
@@ -222,7 +281,8 @@ background-image: url("/img/download.svg");
 color: rgb(51, 51, 51);
 position: relative;
 top: -50px;
-font-size: 30px;
+font-size: 20px;
+text-align: center;
 }
 
 .download-file-container .download-div button {
@@ -234,7 +294,7 @@ font-size: 30px;
     border: 2px solid #9dcbe7;
     background-color: #89bcdb;
     color: #e5eef3;
-
+    cursor: pointer;
 }
 .download-image-container {
     padding: 30px;
@@ -250,6 +310,23 @@ font-size: 30px;
 }
 .download-image-container .download-image img{
     width: 100%;
+}
+/* ------------------------ */
+.alert-popup{
+    position: relative;
+    bottom: 10rem;
+    left: 50%;
+    width: fit-content;
+    background-color: var(--alert-popup-color);
+    padding: 10px 20px;
+    z-index: 100;
+    border-radius: 10px;
+    transition: .4s all ease-in-out;
+}
+.alert-popup span{
+    color: white;
+    font-size: 15px;
+
 }
 /* ------------------------ */
 @media only screen and (max-width: 1000px) {

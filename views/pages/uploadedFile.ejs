@@ -1,19 +1,31 @@
 <%- include('../partials/header'); -%>
-    <div class="download-wrapper">
-        <div class="download-file-container">
-            <div class="download-div">
+    <%- include('../partials/alertPopup'); -%>
 
-                <h2>hdjkghalskfjalffajk52352353</h2>
-                <button>Download</button>
+        <div class="download-wrapper">
+            <div class="download-file-container">
+                <div class="download-div">
+
+                    <h2>
+                        <%= `${siteLink}uploadfile/${file.filename}` %>
+                    </h2>
+
+                    <div class="download-file-button">
+                        <a href="<%= `/uploadfile/${file.filename}` %> " download>
+                            <button id="download-button">Download</button>
+                        </a>
+                        <button id="Copy-img-link">Copy link</button>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="download-image-container">
+                <div class="download-image">
+                    <img src="<%=  `${file.filename}` %> " alt="" draggable="false">
+                </div>
             </div>
 
         </div>
-        <div class="download-image-container">
-            <div class="download-image">
-                <img src="<%=  `${file.filename}` %> " alt="" draggable="false">
-            </div>
-        </div>
-
-    </div>
-
-    <%- include('../partials/footer'); -%>
+        <%- include('../partials/footer',{pageScript:"js/downloadpageScript.js"}); -%>

@@ -1,33 +1,51 @@
 <%- include('../partials/header'); -%>
+    <%- include('../partials/alertPopup'); -%>
 
-    <main>
-        <div class="upload-zone">
-            <div class="drop-zone">
-                <div class="file-image-container">
-                    <img src="./img/document_pictogram.svg" alt="" srcset="" class="left " draggable="false">
-                    <img src="./img/document_pictogram.svg" alt="" srcset="" class="center " draggable="false">
-                    <img src="./img/document_pictogram.svg" alt="" srcset="" class="right " draggable="false">
+        <main>
+            <div class="upload-zone">
+                <div class="drop-zone">
+                    <div class="file-image-container">
+                        <img src="./img/document_pictogram.svg" alt="" srcset="" class="left " draggable="false">
+                        <img src="./img/document_pictogram.svg" alt="" srcset="" class="center " draggable="false">
+                        <img src="./img/document_pictogram.svg" alt="" srcset="" class="right " draggable="false">
 
+                    </div>
+                    <input type="file" id="file-input" style="display: none;">
+                    <h3>Drag a file here or <button class="browse-button">browse</button></h3>
                 </div>
-                <input type="file" id="file-input" style="display: none;">
-                <h3>Drag a file here or <button class="browse-button">browse</button></h3>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar">
-                    <h3>Uploading..</h3>
-                    <h2>0</h2>
-                    <div class="progress-line"></div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <h3>Uploading..</h3>
+                        <h2>0</h2>
+                        <div class="progress-line"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="fileEndpoint-container">
-                <div class="fileEndpoint-div">
-                    <input type="text" readonly>
-                    <button class="copy-button"><i class="fas fa-copy"></i></button>
+                <div class="fileEndpoint-container">
+                    <div class="fileEndpoint-div">
+                        <input type="text" readonly>
+                        <button class="copy-button"><i class="fas fa-copy"></i></button>
+                    </div>
                 </div>
+                <!-- <div class="email-div-container">
+                    <div class="email-div">
+                        <form action="/sentEmail" method="post">
+                            <div class="from-email-div">
+                                <label for="from">Email From</label>
+                                <input type="email" id="from" name="emailfrom" required>
+                            </div>
+                            <div class="to-email-div">
+                                <label for="to">Email To</label>
+                                <input type="text" id="to" name="emailto" required>
+                            </div>
+                            <div class="email-submit">
+                                <input type="submit" value="Sent Email">
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
             </div>
-        </div>
-        <div class="upload-image-section">
-            <img src="img/upload.svg" alt="" draggable="false">
-        </div>
-    </main>
-    <%- include('../partials/footer'); -%>
+            <div class="upload-image-section">
+                <img src="img/upload.svg" alt="" draggable="false">
+            </div>
+        </main>
+        <%- include('../partials/footer' ,{pageScript:"js/main.js"}); -%>
