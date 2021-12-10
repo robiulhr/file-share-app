@@ -11,7 +11,7 @@
     let fileEndpointdivinput = document.querySelector('.fileEndpoint-div input')
     let copyButton = document.querySelector('.copy-button')
     let alertPopup = document.querySelector('.alert-popup')
-    let emaildivcontainer = document.querySelector('.email-div-container')
+    // let emaildivcontainer = document.querySelector('.email-div-container')
     //---------------
     dropZone.addEventListener('dragover', (e) => {
         e.preventDefault()
@@ -85,7 +85,7 @@
             if (percentage === '100%') {
                 uploadingText.textContent = 'Upload Done'
                 AlertPopup('Upload done')
-                emaildivcontainer.style.display = 'block'
+                // emaildivcontainer.style.display = 'block'
             }
         };
         request.onreadystatechange = function () {
