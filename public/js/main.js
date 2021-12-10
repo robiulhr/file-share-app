@@ -69,7 +69,7 @@
         const formData = new FormData();
         formData.append('formData', file);
         var request = new XMLHttpRequest();
-        request.open('POST', '/', true);
+        request.open('POST', 'https://robiul0122.herokuapp.com/', true);
         request.upload.onprogress = function (e) {
             console.log(e.loaded);
             console.log(e.total);
